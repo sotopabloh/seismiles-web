@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>seismiles - Contacto</title>
+		<meta charset="utf-8" />
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Forzamos que el fondo ocupe toda la pantalla y se alinee arriba */
+			#page-wrapper { padding-top: 0 !important; }
+			
+			#main-contact {
+				margin-top: 0 !important;
+				padding: 4em 0 !important;
+				min-height: 100vh;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				background-image: url('images/contacto.jpg'); /* Asegurate que el nombre del archivo sea exacto */
+				background-size: cover;
+				background-position: center;
+				background-attachment: fixed;
+				position: relative;
+			}
+
+			/* Capa oscura para que el formulario se lea bien sobre la foto */
+			#main-contact::before {
+				content: '';
+				position: absolute;
+				top: 0; left: 0; width: 100%; height: 100%;
+				background: rgba(0, 0, 0, 0.6);
+				z-index: 1;
+			}
+
+			#main-contact .container {
+				position: relative;
+				z-index: 2; /* Para que el contenido esté arriba de la capa oscura */
+			}
+
+			h2, p, label { color: #ffffff !important; }
+		</style>
+	</head>
+	<body class="is-preload landing">
+		<div id="page-wrapper">
+
+			<header id="header">
+				<h1 id="logo">
+					<a href="index.html"><img src="images/logo-seismiles.svg" alt="seismiles" /></a>
+				</h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">HOME</a></li>
+						<li><a href="all-films.html">ESTRENOS</a></li>
+						<li><a href="ver-programación.html">SMFF26</a></li>
+						<li><a href="shop.html">SHOP</a></li>
+						<li><a href="contact.html" class="button primary">CONTACTO</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<section id="main-contact">
+				<div class="container">
+					<header class="major">
+						<h2>CONTACTO</h2>
+						<p>¿Tienes un proyecto o consulta? Escríbenos.</p>
+					</header>
+
+					<section>
+						<form method="post" action="#">
+							<div class="row gtr-uniform gtr-50">
+								<div class="col-6 col-12-xsmall">
+									<input type="text" name="name" id="name" value="" placeholder="Nombre" />
+								</div>
+								<div class="col-6 col-12-xsmall">
+									<input type="email" name="email" id="email" value="" placeholder="Email" />
+								</div>
+								<div class="col-12">
+									<select name="category" id="category">
+										<option value="">- Selecciona una categoría -</option>
+										<option value="1">Screenplay</option>
+										<option value="1">Casting</option>
+										<option value="1">SMFF</option>
+										<option value="1">Prensa</option>
+										<option value="1">Otros</option>
+									</select>
+								</div>
+								<div class="col-12">
+									<textarea name="message" id="message" placeholder="Tu mensaje" rows="6"></textarea>
+								</div>
+								<div class="col-12">
+									<ul class="actions">
+										<li><input type="submit" value="Enviar Mensaje" class="primary" /></li>
+										<li><input type="reset" value="Limpiar" /></li>
+									</ul>
+								</div>
+							</div>
+						</form>
+					</section>
+				</div>
+			</section>
+
+			<!-- Footer -->
+				<footer id="footer" style="padding: 3em 0; color: #ffffff;">
+					<div class="container">
+						<div class="row">
+							<div class="col-4 col-12-medium">
+								<h4 style="color: #ffffff;">Films</h4>
+								<ul class="alt">
+									<li><a href="index.html" style="color: #ffffff;">All</a></li>
+									<li><a href="in-theaters.html" style="color: #ffffff;">Estrenos</a></li>
+									<li><a href="ver-programación.html" style="color: #ffffff;">SMFF26</a></li>
+								</ul>
+							</div>
+							<div class="col-4 col-12-medium">
+								<h4 style="color: #ffffff;">Shop</h4>
+								<ul class="alt">
+									<li><a href="shop.html" style="color: #ffffff;">All</a></li>
+									<li><a href="shop.html" style="color: #ffffff;">Coleccionables</a></li>
+								</ul>
+							</div>
+							<div class="col-4 col-12-medium">
+								<h4 style="color: #ffffff;">Studio</h4>
+								<ul class="alt">
+									<li><a href="contact.html" style="color: #ffffff;">Contacto</a></li>
+								</ul>
+							</div>
+						</div>
+						</div>
+
+					<div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-top: 2em;">
+						<ul class="copyright" style="margin: 0; color: #ffffff;">
+							<li>&copy; seismiles studio. All rights reserved.</li>
+						</ul>
+						<ul class="icons" style="margin: 0;">
+							<li><a href="#" class="icon brands alt fa-twitter" style="color: #ffffff;"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands alt fa-facebook-f" style="color: #ffffff;"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands alt fa-instagram" style="color: #ffffff;"><span class="label">Instagram</span></a></li>
+						</ul>
+					</div>
+				</footer>
+
+		</div>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
