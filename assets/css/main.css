@@ -130,7 +130,7 @@ body, input, select, textarea {
 
 /* Títulos: FuturaCyrillic */
 h1 {
-	font-family: 'OVSoge', sans-serif;
+	font-family: 'fa-solid', sans-serif;
     color: #FBFBFB;
     font-weight: 900;
     line-height: 1.5em;
@@ -138,7 +138,7 @@ h1 {
 }
 
 h2, h4, h5, h6 {
-    font-family: 'OVSoge', sans-serif;
+    font-family: 'fa-solid', sans-serif;
     color: #FBFBFB;
     font-weight: 700;
     line-height: 1.2em;
@@ -146,9 +146,9 @@ h2, h4, h5, h6 {
 }
 
 h3 {
-    font-family: 'fa-regular', sans-serif;
+    font-family: 'fa-brands', sans-serif;
 	font-size: 1.5em;      /* Un poco más pequeño que el estándar que tenías */
-    font-weight: 500;       /* Menos pesado que el 700 que tienen los títulos */
+    font-weight: 400;       /* Menos pesado que el 700 que tienen los títulos */
     line-height: 1.2em;     /* Más espacio para facilitar la lectura */
     margin: -1em 0 1em 0;   /* El margen negativo superior acerca el subtítulo al título */
     color: #FBFBFB;       /* Un color un poco más suave para diferenciarlo del Título (h2) */
