@@ -4036,3 +4036,11 @@ pre code { display: block; line-height: 1.75em; padding: 1em 1.5em; overflow-x: 
 					}
 
 	}
+@media (max-width: 767px) {
+    .logo {
+        width: 80%;       /* Ocupa el 80% del ancho de la pantalla */
+        max-width: 250px; /* Pero nunca más grande que 250px */
+        display: block;
+        margin: 0 auto;   /* Centra el logo automáticamente */
+    }
+}
