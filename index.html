@@ -121,12 +121,13 @@
 							<h2>Suscribite al Newsletter</h2>
 							<p>Sé el primero en entrar a la sala. Novedades de rodajes y estrenos.</p>
 						</header>
-						<form method="post" action="https://formspree.io/f/xaqplzoq" class="cta">
+						<form method="post" action="https://formspree.io/f/xaqplzoq" class="cta" id="newsletter-form">
 							<div class="row gtr-uniform gtr-50">
 								<div class="col-8 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
 								<div class="col-4 col-12-xsmall"><input type="submit" value="Suscribirme" class="fit primary" /></div>
 							</div>
 						</form>
+						<div id="newsletter-status"></div>
 					</div>
 				</section>
 
@@ -193,6 +194,44 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				var newsletterForm = document.getElementById("newsletter-form");
+				var statusBox = document.getElementById("newsletter-status");
 
+				async function handleNewsletterSubmit(event) {
+					event.preventDefault();
+					var data = new FormData(event.target);
+					
+					fetch(event.target.action, {
+						method: newsletterForm.method,
+						body: data,
+						headers: { 'Accept': 'application/json' }
+					}).then(response => {
+						if (response.ok) {
+							showStatus("¡Gracias por sumarte a SeisMiles!", "success");
+							newsletterForm.reset();
+						} else {
+							showStatus("Oops! Algo salió mal. Intentá de nuevo.", "error");
+						}
+					}).catch(error => {
+						showStatus("Error de conexión.", "error");
+					});
+				}
+
+				function showStatus(message, type) {
+					statusBox.innerHTML = message;
+					statusBox.className = type === "success" ? "status-success" : "status-error";
+					statusBox.style.display = "block";
+					statusBox.style.opacity = "1";
+
+					// Se desvanece después de 4 segundos
+					setTimeout(() => {
+						statusBox.style.opacity = "0";
+						setTimeout(() => { statusBox.style.display = "none"; }, 500);
+					}, 4000);
+				}
+
+				newsletterForm.addEventListener("submit", handleNewsletterSubmit);
+			</script>
 	</body>
 </html>
