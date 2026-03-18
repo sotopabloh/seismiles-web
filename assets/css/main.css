@@ -187,10 +187,11 @@ a:hover { color: #CC3333 !important; border-bottom-color: transparent; }
 		transition: opacity 0.5s ease;
 	}
 
-	.status-success {
-		background-color: #161616; /* Color SeisMiles */
+		.status-success {
+		background-color: rgba(22, 22, 22, 0.5); /* El 0.5 al final es la opacidad del fondo */
 		color: #ffffff;
 		border: 1px solid #333;
+		backdrop-filter: blur(5px); /* Opcional: esto le da un efecto de vidrio esmerilado */
 	}
 
 	.status-error {
