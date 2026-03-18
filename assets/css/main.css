@@ -173,31 +173,26 @@ a {
 a:hover { color: #CC3333 !important; border-bottom-color: transparent; }
 
 /* Newsletter */
-		#newsletter-status {
-		position: fixed;
-		top: 20px;
-		left: 50%;
-		transform: translateX(-50%);
-		z-index: 10000;
-		padding: 15px 30px;
-		border-radius: 5px;
-		display: none; /* Escondido por defecto */
-		font-weight: bold;
-		text-align: center;
-		transition: opacity 0.5s ease;
-	}
+		/* Esto aplica tanto al Newsletter como al Formulario de Contacto */
+	#newsletter-status, #my-form-status {
+    position: fixed;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    padding: 15px 30px;
+    border-radius: 8px;
+    display: none;
+    transition: opacity 0.5s ease;
 
-		.status-success {
-		background-color: rgba(22, 22, 22, 0.5); /* El 0.5 al final es la opacidad del fondo */
-		color: #ffffff;
-		border: 1px solid #333;
-		backdrop-filter: blur(5px); /* Opcional: esto le da un efecto de vidrio esmerilado */
-	}
-
-	.status-error {
-		background-color: #ff4b2b;
-		color: white;
-	}
+    /* EL SECRETO ESTÁ AQUÍ: */
+    background-color: rgba(22, 22, 22, 1); /* Fondo negro al 50% */
+    color: #fbfbfb;                          /* Texto blanco al 100% (pleno) */
+    
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px); 
+    font-weight: bold;
+}
 
 /* Otros elementos */
 strong, b { color: #ffffff; font-weight: 700; }

@@ -154,27 +154,48 @@
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
 		<script>
-		var form = document.getElementById("my-form");
-		
-		async function handleSubmit(event) {
-			event.preventDefault();
-			var status = document.getElementById("my-form-status");
-			var data = new FormData(event.target);
-			
-			fetch(event.target.action, {
-			method: form.method,
-			body: data,
-			headers: { 'Accept': 'application/json' }
-			}).then(response => {
-			if (response.ok) {
-				status.innerHTML = "Mensaje enviado con éxito.";
-				form.reset(); // Esto limpia los campos automáticamente
-			} else {
-				status.innerHTML = "Oops! Hubo un error al enviar.";
+			var form = document.getElementById("my-form");
+			var statusBox = document.getElementById("my-form-status");
+
+			async function handleSubmit(event) {
+				event.preventDefault();
+				var data = new FormData(event.target);
+				
+				fetch(event.target.action, {
+					method: form.method,
+					body: data,
+					headers: { 'Accept': 'application/json' }
+				}).then(response => {
+					if (response.ok) {
+						showStatus("¡Mensaje enviado con éxito!", "success");
+						form.reset();
+					} else {
+						showStatus("Oops! Hubo un error al enviar.", "error");
+					}
+				}).catch(error => {
+					showStatus("Error de conexión con el servidor.", "error");
+				});
 			}
-			});
-		}
-		form.addEventListener("submit", handleSubmit);
+
+			function showStatus(message, type) {
+				statusBox.innerHTML = message;
+				// Usamos las mismas clases de CSS que en el index
+				statusBox.className = type === "success" ? "status-success" : "status-error";
+				
+				statusBox.style.display = "block";
+				// Si querés 50% de opacidad, usá "0.5". Si preferís sólido, usá "1".
+				statusBox.style.opacity = "0.8"; 
+
+				// Se desvanece después de 4 segundos
+				setTimeout(() => {
+					statusBox.style.opacity = "0";
+					setTimeout(() => { 
+						statusBox.style.display = "none"; 
+					}, 500);
+				}, 4000);
+			}
+
+			form.addEventListener("submit", handleSubmit);
 		</script>
 	</body>
 </html>
